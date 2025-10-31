@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wina Bwangu Web App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* --- Team Section Styling --- */
+        
+        .team {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 80px 0;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+        
+        .team:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .team h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+        
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+        
+        .team .member {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            width: 220px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .team .member:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .team .member img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .team .member h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .team .member p {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <h1>Wina Bwangu</h1>
+            <button class="mobile-menu-toggle" id="menuToggle">&#9776;</button>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <h2>Welcome to Wina Bwangu</h2>
+            <p>Fast, reliable, and simple solutions for transactions and revenue tracking.</p>
+            <button onclick="window.location.href='login.html'">Get Started</button>
+        </div>
+    </section>
+
+    <section id="services" class="quick-services">
+        <div class="container">
+            <h2>Quick Services</h2>
+            <div class="services-grid" id="servicesGrid"></div>
+        </div>
+    </section>
+
+    <section id="dashboard" class="dashboard-section">
+        <div class="container">
+            <h2>Transaction Dashboard</h2>
+            <div class="form-section">
+                <h3>Transaction Entry</h3>
+                <label>Booth:
+                    <select id="boothSel"></select>
+                </label>
+                <div>Location: <span id="boothLocation"></span></div>
+
+                <label>Revenue Type (Service):
+                    <select id="serviceSel"></select>
+                </label>
+                <div>Revenue per Kwacha (Rate): <span id="revPerKwacha">-</span></div>
+
+                <label>Gross Transaction Amount (Kwacha):
+                    <input type="number" id="amount" min="0.01" step="0.01" placeholder="e.g., 500.00">
+                </label>
+
+                <button id="submitBtn">Submit Transaction</button>
+                <div id="transactionResult">
+                    <p>Transaction details will appear here after submission.</p>
+                </div>
+            </div>
+
+            <div class="dashboard">
+                <h3>Dashboard Summary</h3>
+                <div class="dashboard-grid" id="cards"></div>
+                <h3>Revenue Mix by Service</h3>
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What People Say</h2>
+            <div class="testimonial-grid" id="testimonialGrid"></div>
+        </div>
+    </section>
+
+    <!-- ✅ Team Section Added Here -->
+    <section id="team" class="team" onclick="window.location.href='team.html';" style="cursor:pointer;">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <div class="team-members">
+                <div class="member">
+                    <img src="member1.jpg" alt="Jailos Chipoya">
+                    <h3>Jailos Chipoya</h3>
+                    <p>Lead Developer</p>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ✅ End of Team Section -->
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Wina Bwangu. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // --- Responsive Nav Toggle ---
+        const toggle = document.getElementById("menuToggle");
+        const nav = document.getElementById("navbar");
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            toggle.classList.toggle("active");
+        });
+    </script>
+</body>
+
+</html>
