@@ -22,6 +22,20 @@
     --transition: all 0.3s ease;
 }
 
+
+/* ===== SCROLL PROGRESS BAR ===== */
+
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background: var(--primary);
+    z-index: 1000;
+    transition: width 0.25s ease-out;
+}
+
 body {
     font-family: "Segoe UI", Tahoma, sans-serif;
     line-height: 1.6;
@@ -45,6 +59,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
+    transition: var(--transition);
 }
 
 header h1 {
