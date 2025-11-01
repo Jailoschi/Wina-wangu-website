@@ -70,6 +70,7 @@
 </head>
 
 <body>
+    <div id="progress-bar"></div>
     <header>
         <div class="container header-container">
             <h1>Wina Bwangu</h1>
@@ -174,6 +175,14 @@
             nav.classList.toggle("active");
             toggle.classList.toggle("active");
         });
+    </script>
+    <script>
+        window.onscroll = function() {
+            let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (scrollTop / scrollHeight) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
     </script>
 </body>
 
