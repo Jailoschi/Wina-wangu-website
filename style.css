@@ -43,11 +43,52 @@ body {
     background: var(--bg-light);
 }
 
+.stats-section {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: #fff;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.stat {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    min-width: 220px;
+    transition: transform 0.3s ease;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+}
+
+.stat h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+#dashboard {
+    background: url('https://cdn.pixabay.com/photo/2022/10/14/08/03/earbuds-7520738_1280.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+}
+
 
 /* ===== HEADER ===== */
 
 header {
-    background: var(--bg-white);
+    background: var(transparent);
+    background-image: url('https://cdn.pixabay.com/photo/2023/10/21/22/01/wood-8332732_1280.jpg');
     box-shadow: var(--shadow);
     position: sticky;
     top: 0;
@@ -63,7 +104,7 @@ header {
 }
 
 header h1 {
-    color: var(--primary);
+    color: var(--bg-white);
     font-size: 1.8rem;
     font-weight: 700;
 }
@@ -79,7 +120,7 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--bg-white);
     font-weight: 500;
     transition: var(--transition);
 }
