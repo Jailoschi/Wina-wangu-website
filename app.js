@@ -16,8 +16,8 @@ servicesQuick.forEach(s => {
 
 // --- Testimonials ---
 const testimonials = [
-    { name: "Susan", message: "This app changed my life, I never knew that group 10 could pull up such a stunt!" },
-    { name: "Nuh", message: "Super fast and easy to use plus it works in any place." },
+    { name: "Susan", message: "This app changed my life!" },
+    { name: "Nuh", message: "Super fast and easy to use." },
     { name: "Tino", message: "I recommend it to everyone!" }
 ];
 const testimonialGrid = document.getElementById("testimonialGrid");
@@ -161,5 +161,4 @@ loadDashboard();
 document.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
     const nav = document.getElementById('main-nav');
     nav.classList.toggle('active');
-
 });
