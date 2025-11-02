@@ -36,59 +36,25 @@
     transition: width 0.25s ease-out;
 }
 
+
+/* ===== BODY ===== */
+
 body {
     font-family: "Segoe UI", Tahoma, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     background: var(--bg-light);
-}
-
-.stats-section {
-    background: linear-gradient(135deg, #2563eb, #1e40af);
-    color: #fff;
-    text-align: center;
-    padding: 4rem 2rem;
-}
-
-.stats-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    margin-top: 2rem;
-}
-
-.stat {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1.5rem 2rem;
-    border-radius: 12px;
-    min-width: 220px;
-    transition: transform 0.3s ease;
-}
-
-.stat:hover {
-    transform: translateY(-5px);
-}
-
-.stat h3 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-#dashboard {
-    background: url('https://cdn.pixabay.com/photo/2022/10/14/08/03/earbuds-7520738_1280.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    color: white;
+    overflow-x: hidden;
 }
 
 
 /* ===== HEADER ===== */
 
 header {
-    background: var(transparent);
+    background: transparent;
     background-image: url('https://cdn.pixabay.com/photo/2023/10/21/22/01/wood-8332732_1280.jpg');
+    background-size: cover;
+    background-position: center;
     box-shadow: var(--shadow);
     position: sticky;
     top: 0;
@@ -125,8 +91,10 @@ nav a {
     transition: var(--transition);
 }
 
-nav a:hover {
-    color: var(--primary);
+nav a:hover,
+nav a:focus {
+    color: var(--accent);
+    outline: none;
 }
 
 
@@ -138,7 +106,7 @@ nav a:hover {
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--text-dark);
+    color: var(--bg-white);
 }
 
 
@@ -174,22 +142,11 @@ nav a:hover {
     transition: var(--transition);
 }
 
-.hero button:hover {
+.hero button:hover,
+.hero button:focus {
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
-}
-
-
-/* ===== SECTIONS ===== */
-
-section {
-    padding: 4rem 0;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2rem;
+    outline: none;
 }
 
 
@@ -224,8 +181,16 @@ h2 {
 
 /* ===== DASHBOARD ===== */
 
+#dashboard {
+    background: url('https://cdn.pixabay.com/photo/2022/10/14/08/03/earbuds-7520738_1280.jpg') no-repeat center/cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
 .dashboard-section {
-    background: var(--bg-light);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 3rem;
+    border-radius: 16px;
 }
 
 .form-section {
@@ -256,6 +221,7 @@ h2 {
 .form-section select:focus {
     outline: none;
     border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }
 
 #submitBtn {
@@ -373,7 +339,7 @@ footer {
         top: 100%;
         left: 0;
         right: 0;
-        background: var(--bg-white);
+        background: var(--text-dark);
         box-shadow: var(--shadow);
         max-height: 0;
         overflow: hidden;
@@ -393,6 +359,7 @@ footer {
     nav a {
         display: block;
         padding: 1rem;
+        color: #fff;
     }
     .hero h2 {
         font-size: 1.8rem;
@@ -415,4 +382,17 @@ footer {
     .hero h2 {
         font-size: 1.5rem;
     }
+}
+
+
+/* ✅ Make text in dashboard boxes readable */
+
+.dashboard {
+    color: #000 !important;
+}
+
+.dashboard h3,
+.dashboard p,
+.dashboard span {
+    color: #000 !important;
 }
