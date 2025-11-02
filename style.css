@@ -396,3 +396,61 @@ footer {
 .dashboard span {
     color: #000 !important;
 }
+
+
+/* ===== PERFORMANCE OVERVIEW / STATS SECTION (COLORED VERSION) ===== */
+
+.stats-section {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    color: #fff;
+    /* make text white on colorful background */
+    margin: 3rem 0;
+    box-shadow: var(--shadow-lg);
+}
+
+.stats-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    color: #fff;
+    /* ensures the heading stands out */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat {
+    background: rgba(255, 255, 255, 0.1);
+    /* semi-transparent card */
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.stat h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    /* bold white text */
+    margin-bottom: 0.75rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.stat p {
+    font-size: 1rem;
+    color: #f0f0f0;
+    /* light gray for contrast */
+    line-height: 1.4;
+}
